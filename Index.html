@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamad Bin Saeed - Portfolio</title>
+    <style>
+        /* General Body Styling with lighter sky blue background */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #E6F7FF; /* Light Sky Blue */
+            background-attachment: fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Background texture with a darker glowing effect for the header */
+        body:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/dark-denim.png'), rgba(135, 206, 235, 0.5); /* Sky Blue Pattern */
+            background-blend-mode: overlay;
+            opacity: 0.9; /* Darker transparency to make it more visible */
+            z-index: -1;
+        }
+
+        /* Styling for Header with ash white and dark blue gradient */
+        header {
+            background: linear-gradient(135deg, #F8F8F8, #2B547E); /* Ash White to Dark Blue */
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+            border-radius: 10px;
+            max-width: 95%;
+            margin: 20px auto;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/dark-denim.png'), rgba(0, 51, 102, 0.4); /* Darker Texture */
+            z-index: -1;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #ffffff; /* White Text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+        }
+
+        /* Section Styling */
+        section {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        h2 {
+            color: #2B547E; /* Dark Blue for Headings */
+            font-size: 2em;
+            border-bottom: 2px solid #87CEEB;
+            padding-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Styling for Lists (Skills, Work Samples, etc.) */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #87CEEB;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #2B547E; /* Dark Blue for Links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Resume Button Styling */
+        .resume-upload button {
+            background-color: #2B547E;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .resume-upload button:hover {
+            background-color: #87CEEB;
+            color: #2B547E;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Shadow effect on hover */
+        }
+
+        /* Resume upload input style */
+        .resume-upload input[type="file"] {
+            display: none;
+        }
+
+        .resume-upload label {
+            background-color: #2B547E;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .resume-upload label:hover {
+            background-color: #87CEEB;
+            color: #2B547E;
+        }
+
+        .resume-upload .resume-name {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #2B547E;
+        }
+
+        /* Footer Styling with gradient and same dark texture as header */
+        footer {
+            background: linear-gradient(135deg, #F8F8F8, #2B547E); /* Ash White to Dark Blue Footer */
+            position: relative;
+            text-align: center;
+            padding: 40px;
+            color: white;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        /* Same dark texture for footer as header */
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/dark-denim.png'), rgba(0, 51, 102, 0.4); /* Same dark texture */
+            z-index: -1;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Box Shadow Effect */
+        .box-shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Collapsible Section Styling with shadow */
+        .collapsible {
+            background-color: #2B547E; /* Dark Blue */
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        /* Shadow effect when mouse hovers over each section header */
+        .collapsible:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .collapsible:after {
+            content: '\002B'; /* Unicode character for "+" sign */
+            color: white;
+            font-weight: bold;
+            float: right;
+        }
+
+        .collapsible.active:after {
+            content: "\2212"; /* Unicode character for "-" sign */
+        }
+
+        .collapsible-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="box-shadow">
+    <h1>Hamad Bin Saeed - Portfolio</h1>
+</header>
+
+<section class="container">
+    <h2>Introduction</h2>
+    <p>My name is Hamad Bin Saeed, and I am currently pursuing a Bachelor's in IT from the University of Mirpurkhas. I am in my last semester. I have been working as a Project Manager at EasyAiz for over a year. My job includes project management, client handling, employee task delegation, issue resolution, and providing timely updates to clients regarding their projects.</p>
+</section>
+
+<section class="container">
+    <h2>Skills</h2>
+    <ul>
+        <li>Project Management (EasyAiz, 1+ year)</li>
+        <li>Client Communication and Project Delivery</li>
+        <li>Basic Python Programming</li>
+        <li>Technical Management</li>
+        <li>Data Management</li>
+    </ul>
+</section>
+
+<section class="container">
+    <h2>Experience</h2>
+    <p>I have been working as a Project Manager at EasyAiz, handling multiple responsibilities such as managing client projects, delegating tasks to employees, solving technical issues, and ensuring timely updates for clients. My management and communication skills help me navigate projects smoothly.</p>
+</section>
+
+<section class="container">
+    <h2>Work Samples</h2>
+    <button class="collapsible">Work Samples</button>
+    <div class="collapsible-content">
+        <ul>
+            <li>Sample Work 1: <a href="#">Project Demo Link 1</a></li>
+            <li>Sample Work 2: <a href="#">Project Demo Link 2</a></li>
+            <li>Sample Work 3: <a href="#">Project Demo Link 3</a></li>
+            <li>Sample Work 4: <a href="#">Project Demo Link 4</a></li>
+            <li>Sample Work 5: <a href="#">Project Demo Link 5</a></li>
+            <li>Sample Work 6: <a href="#">Project Demo Link 6</a></li>
+            <li>Sample Work 7: <a href="#">Project Demo Link 7</a></li>
+            <li>Sample Work 8: <a href="#">Project Demo Link 8</a></li>
+            <li>Sample Work 9: <a href="#">Project Demo Link 9</a></li>
+            <li>Sample Work 10: <a href="#">Project Demo Link 10</a></li>
+        </ul>
+    </div>
+</section>
+
+<section class="container">
+    <h2>Case Studies</h2>
+    <button class="collapsible">Case Studies</button>
+    <div class="collapsible-content">
+        <ul>
+            <li>Case Study 1: Successfully managed the automation of over 700+ businesses through EasyAiz, saving clients time and effort.</li>
+            <li>Case Study 2: Streamlined project communication between clients and employees, leading to a 20% increase in task efficiency.</li>
+            <li>Case Study 3: Implemented automation that reduced manual work by 50% for a large e-commerce client.</li>
+            <li>Case Study 4: Improved data management for a finance company, resulting in a 15% increase in productivity.</li>
+            <li>Case Study 5: Managed the development of a custom CRM solution for a healthcare client.</li>
+            <li>Case Study 6: Enhanced project delivery time by integrating advanced reporting tools for a real estate firm.</li>
+            <li>Case Study 7: Spearheaded automation workflows that saved a gym chain 200+ hours annually.</li>
+            <li>Case Study 8: Led a cross-functional team to deliver a full-scale Zapier integration for a coaching business.</li>
+            <li>Case Study 9: Reduced technical debt for a digital marketing agency through smart project management techniques.</li>
+            <li>Case Study 10: Delivered an automated billing system for a non-profit, simplifying their finance operations.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="container">
+    <h2>Testimonials</h2>
+    <button class="collapsible">Testimonials</button>
+    <div class="collapsible-content">
+        <ul>
+            <li>"Hamad is an exceptional project manager. He keeps everything on track and ensures excellent results!" - John Doe, CEO, Example Company</li>
+            <li>"Working with Hamad was a pleasure. His management skills and client handling are top-notch!" - Jane Smith, Founder, Startup X</li>
+            <li>"Hamad's attention to detail and communication skills are unmatched." - Alex Lee, Marketing Director, Digital World</li>
+            <li>"We saw a 30% efficiency increase after Hamad optimized our processes." - Sarah Brown, COO, E-commerce Solutions</li>
+            <li>"Reliable, efficient, and always delivering on time!" - Michael Taylor, Founder, Tech Innovators</li>
+            <li>"Hamad's expertise in project management helped us scale our business operations smoothly." - Lisa White, Head of Operations, RealEstatePro</li>
+            <li>"Great experience working with Hamad, truly understands client needs." - James Evans, CTO, FinTech Experts</li>
+            <li>"Thanks to Hamad's management, our automation projects were a huge success!" - Maria Lopez, CEO, GymFit</li>
+            <li>"Hamad is dedicated and goes above and beyond to deliver." - Charles Green, Managing Partner, Legal Counselors</li>
+            <li>"Our team's productivity improved significantly with Hamad's guidance." - Susan Miller, VP, HealthCare Plus</li>
+        </ul>
+    </div>
+</section>
+
+<section class="container">
+    <h2>Contact Information</h2>
+    <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:hammadoffical88@gmail.com">hammadoffical88@gmail.com</a></p>
+        <p><strong>Phone:</strong> 0313-3631737</p>
+        <p><strong>Address:</strong> House No 1574, Neem Wali Gali, Heerabad, Mirpurkhas, Sindh, Pakistan</p>
+    </div>
+</section>
+
+<section class="container">
+    <h2>Resume</h2>
+    <div class="resume-upload">
+        <form id="resumeForm" enctype="multipart/form-data">
+            <label for="resumeUpload">Upload your resume</label>
+            <input type="file" id="resumeUpload" name="resume" onchange="showFileName()">
+            <p class="resume-name" id="resumeName">No file uploaded</p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Hamad Bin Saeed. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Collapsible functionality
+    var collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(function(collapsible) {
+        collapsible.addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+
+    // Show the file name on resume upload
+    function showFileName() {
+        var fileInput = document.getElementById("resumeUpload");
+        var fileName = fileInput.files[0].name;
+        document.getElementById("resumeName").innerText = fileName;
+    }
+</script>
+
+</body>
+</html>
